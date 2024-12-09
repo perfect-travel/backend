@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDb = async () => {
 	try {
+		console.log(process.env.MONGODB_URL);
 		const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URL}crm`);
 		console.log(`MongoDb connection: || DB HOST:  ${connectionInstance.connection.host}`);
 	} catch (error) {
